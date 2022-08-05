@@ -6,10 +6,14 @@
 
 function updateCoffeeView(coffeeQty) {
   // your code here
+  const coffeeCup = document.getElementById('coffee_counter');
+  coffeeCup.innerText = coffeeQty;
 }
 
 function clickCoffee(data) {
   // your code here
+  // data.coffee++;
+  updateCoffeeView(++data.coffee);
 }
 
 /**************
