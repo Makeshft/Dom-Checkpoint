@@ -582,7 +582,7 @@ describe('Slice 3: Buying Producers & Tick', function() {
     });
 
     // Hint: Use the function you've already written!
-    xit('mutates the data only if the player can afford the producer', function() {
+    it('mutates the data only if the player can afford the producer', function() {
       // `buyButtonClick` accepts a browser event argument. Here, we simulate this by creating an event object ourselves. We'll only give that fake event object the properties that are relevant for our purposes.
 
       // This purchase should succeed.
@@ -599,7 +599,7 @@ describe('Slice 3: Buying Producers & Tick', function() {
     });
 
     // Hint: See https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
-    xit('shows an alert box with the message "Not enough coffee!" only if the player cannot afford the producer', function() {
+    it('shows an alert box with the message "Not enough coffee!" only if the player cannot afford the producer', function() {
       const spyOnAlert = sinon.spy(window, 'alert');
 
       // This purchase should fail.
@@ -617,7 +617,7 @@ describe('Slice 3: Buying Producers & Tick', function() {
     });
 
     // Notice that at the bottom of `script.js` we attach an event listener that calls `buyButtonClick` not just to a buy button but to the entire producer container. Here, we test that you filter clicks so that the function pays attention only to clicks on buy buttons.
-    xit("does not modify data or show an alert box if the event passed in doesn't represent a click on a button element", function() {
+    it("does not modify data or show an alert box if the event passed in doesn't represent a click on a button element", function() {
       const spyOnAlert = sinon.spy(window, 'alert');
       const snapshot = JSON.stringify(data);
 

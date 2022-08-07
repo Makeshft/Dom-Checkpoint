@@ -105,7 +105,7 @@ function getProducerById(data, producerId) {
 
 function canAffordProducer(data, producerId) {
   // your code here
-  return getProducerById(data, producerId).price <= data.coffee;
+  return getProducerById(data, producerId)?.price <= data.coffee;
 }
 
 function updateCPSView(cps) {
@@ -136,7 +136,13 @@ function attemptToBuyProducer(data, producerId) {
 
 function buyButtonClick(event, data) {
   // your code here
-  
+  if(event.target.tagName === 'BUTTON') {
+    const producerId = event.target.id.replaceAll('buy_', '');
+
+    if(!attemptToBuyProducer(data, producerId)) {
+      window.alert('Not enough coffee!');
+    }
+  }
 }
 
 function tick(data) {
