@@ -631,7 +631,7 @@ describe('Slice 3: Buying Producers & Tick', function() {
     });
 
     // Hint: Call a function you've already written!
-    xit('renders the updated producers when a purchase succeeds', function() {
+    it('renders the updated producers when a purchase succeeds', function() {
       const event = { target: { tagName: 'BUTTON', id: 'buy_producer_A' } };
       code.buyButtonClick(event, data);
       const producerContainer = document.getElementById('producer_container');
@@ -639,7 +639,7 @@ describe('Slice 3: Buying Producers & Tick', function() {
     });
 
     // Hint: Call a function you've already written!
-    xit('updates the coffee count on the DOM, reflecting that coffee has been spent, when a purchase succeeds', function() {
+    it('updates the coffee count on the DOM, reflecting that coffee has been spent, when a purchase succeeds', function() {
       const event = { target: { tagName: 'BUTTON', id: 'buy_producer_A' } };
       code.buyButtonClick(event, data);
       const coffeeCounter = document.getElementById('coffee_counter');
@@ -647,7 +647,7 @@ describe('Slice 3: Buying Producers & Tick', function() {
     });
 
     // Hint: Call a function you've already written!
-    xit("updates the total CPS on the DOM, reflecting that the new producer's CPS has been added", function() {
+    it("updates the total CPS on the DOM, reflecting that the new producer's CPS has been added", function() {
       const event = { target: { tagName: 'BUTTON', id: 'buy_producer_A' } };
       code.buyButtonClick(event, data);
       const cpsIndicator = document.getElementById('cps');
@@ -675,19 +675,19 @@ describe('Slice 3: Buying Producers & Tick', function() {
       };
     });
 
-    xit('increases coffee count by the total CPS', function() {
+    it('increases coffee count by the total CPS', function() {
       code.tick(data);
       expect(data.coffee).to.be.equal(100);
     });
 
     // Hint: Use what you've written already! The tick function can be just a few lines.
-    xit('updates the DOM to reflect this new coffee count', function() {
+    it('updates the DOM to reflect this new coffee count', function() {
       code.tick(data);
       const coffeeCounter = document.getElementById('coffee_counter');
       expect(coffeeCounter.innerText).to.equal(100);
     });
 
-    xit('updates the DOM to reflect any newly unlocked producers', function() {
+    it('updates the DOM to reflect any newly unlocked producers', function() {
       code.tick(data);
       const producerContainer = document.getElementById('producer_container');
       expect(producerContainer.childNodes.length).to.be.equal(2);

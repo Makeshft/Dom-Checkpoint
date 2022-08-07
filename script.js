@@ -141,12 +141,19 @@ function buyButtonClick(event, data) {
 
     if(!attemptToBuyProducer(data, producerId)) {
       window.alert('Not enough coffee!');
+    } else {
+      renderProducers(data);
+      updateCoffeeView(data.coffee);
+      updateCPSView(data.totalCPS);
     }
   }
 }
 
 function tick(data) {
   // your code here
+  data.coffee += data.totalCPS;
+  updateCoffeeView(data.coffee);
+  renderProducers(data);
 }
 
 /*************************
